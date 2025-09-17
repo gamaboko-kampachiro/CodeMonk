@@ -1,0 +1,73 @@
+Universal Document Intelligence Chatbot
+
+------------------------------------
+
+### **Objective**
+
+Build a **universal knowledge assistant chatbot** that intelligently answers queries using both **uploaded documents** and **web search** —depending on the nature of the question.
+
+------------------------------------
+
+### 🔍**Use Case**
+
+A research team, legal firm, or business user uploads multiple documents (PDFs, reports, manuals, contracts, etc.). The chatbot should:
+
+- Answer questions directly from the documents.
+- Automatically switch to web search when the document lacks sufficient information.
+- Combine both sources when needed for comprehensive responses.
+
+------------------------------------
+
+### **Core Features (Must Have)**
+
+1. **Universal Document Processing**
+    - Support multiple file formats: **PDF**
+    - Extract and chunk text intelligently
+    - Preserve metadata (filename, page numbers, headings)
+2. **Smart Query Routing**
+    - **Document Mode**: If the answer exists in uploaded docs
+    - **Web Search Mode**: Use external search (via API like Serper.dev) when:
+    - Query involves recent, comparative, or detailed info
+3. **Semantic Vector Search**
+    - Embed document content using a vector store (e.g., FAISS, ChromaDB)
+    - Perform **semantic retrieval**.
+4. **Interactive Chat Interface**
+    - Upload & manage documents using Streamlit/Gradio
+    - Display chat history.
+
+------------------------------------
+
+### **Routing Logic Guidelines**
+
+Trigger **Web Search** when queries include:
+
+- Temporal keywords: latest, 2024, current, etc.
+- Explanations: explain, how does, etc.
+- Comparisons: vs, alternatives to
+- Current data: trends, price, stock
+- Specifications not in docs
+
+------------------------------------
+
+### **Tools to Use** ###
+
+Component     | suggested tools
+
+LLM            | Ollama models
+Embeddings     | Sentence transformer
+Vector DB      | FAISS
+Web Search     | serper.dev API
+Doc Processing | Any PDF parser available
+Framework      | Langchain, CrewAI
+UI             | Gradio
+
+------------------------------------
+
+### **Technical Scope**
+
+**Minimal Viable Flow**:
+
+- Upload document → Ingest into vector store
+- Ask question → Try semantic search on docs
+- If no match → Trigger web search
+- Return best possible answer (with sources)
