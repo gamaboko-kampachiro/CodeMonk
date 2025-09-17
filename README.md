@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Universal Document Intelligence Chatbot
 
 An intelligent chatbot that answers queries using both uploaded documents and web search, depending on the nature of the question.
@@ -106,3 +107,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## 📄 License
 
 This project is licensed under the MIT License.
+=======
+# CodeMonk
+>>>>>>> 031f7b120d2c77c67151eb70e666cc194c33b24e
